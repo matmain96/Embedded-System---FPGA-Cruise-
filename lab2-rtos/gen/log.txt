@@ -1,0 +1,22 @@
+Info: Building ../../../bsp/il2206-pre-built-ucosii/
+make --no-print-directory -C ../../../bsp/il2206-pre-built-ucosii/
+[BSP build complete]
+[../bin/TwoTask build complete]
+Info: Building ../../../bsp/il2206-pre-built-ucosii/
+make --no-print-directory -C ../../../bsp/il2206-pre-built-ucosii/
+[BSP build complete]
+Info: Compiling ../src/TwoTasks.c to obj/default/TwoTasks.o
+nios2-elf-gcc -xc -MP -MMD -c -I../../../bsp/il2206-pre-built-ucosii//UCOSII/inc -I../../../bsp/il2206-pre-built-ucosii//HAL/inc -I../../../bsp/il2206-pre-built-ucosii/ -I../../../bsp/il2206-pre-built-ucosii//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -D__ucosii__    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/TwoTasks.o ../src/TwoTasks.c
+../src/TwoTasks.c: In function 'printStackSize':
+../src/TwoTasks.c:34: warning: format '%d' expects type 'int', but argument 4 has type 'INT32U'
+../src/TwoTasks.c:34: warning: format '%d' expects type 'int', but argument 5 has type 'INT32U'
+../src/TwoTasks.c:34: warning: format '%d' expects type 'int', but argument 4 has type 'INT32U'
+../src/TwoTasks.c:34: warning: format '%d' expects type 'int', but argument 5 has type 'INT32U'
+Info: Linking ../bin/TwoTask.elf
+nios2-elf-g++  -T'../../../bsp/il2206-pre-built-ucosii//linker.x' -msys-crt0='../../../bsp/il2206-pre-built-ucosii//obj/HAL/src/crt0.o' -msys-lib=ucosii_bsp -L../../../bsp/il2206-pre-built-ucosii/   -Wl,-Map=../bin/TwoTask.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o ../bin/TwoTask.elf obj/default/TwoTasks.o -lm 
+nios2-elf-insert ../bin/TwoTask.elf --thread_model ucosii --cpu_name nios2_ht18_mainenti_lezeta --qsys true --simulation_enabled false --id 1911 --sidp 0x1101128 --timestamp 1537962072 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name ht_18_mainenti_lezeta --sopcinfo /home/student/Desktop/ht_18_mainenti_lezeta.sopcinfo
+Info: (../bin/TwoTask.elf) 93 KBytes program size (code + initialized data).
+Info:                      412 KBytes free for stack + heap.
+Info: Creating ../bin/TwoTask.objdump
+nios2-elf-objdump --disassemble --syms --all-header ../bin/TwoTask.elf >../bin/TwoTask.objdump
+[../bin/TwoTask build complete]
